@@ -22,4 +22,13 @@ public struct OnFirstAppearViewModifier: ViewModifier {
     }
 }
 
+@available(iOS 13.0, macOS 10.15, *)
+public extension View {
+    /// Performs the given action if the view is shown for the first time.
+    /// - Parameter action: Action to perform when the view is shown for the first time.
+    func onFirstAppear(perform action: @escaping () -> Void) -> some View {
+        modifier(OnFirstAppearViewModifier(perform: action))
+    }
+}
+
 #endif
