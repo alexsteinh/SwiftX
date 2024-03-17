@@ -7,7 +7,7 @@ let package = Package(
     products: [
         .library(
             name: "SwiftX",
-            targets: ["SwiftX"]),
+            targets: ["SwiftX", "SwiftUIX"]),
     ],
     targets: [
         .target(
@@ -15,5 +15,8 @@ let package = Package(
         .testTarget(
             name: "SwiftXTests",
             dependencies: ["SwiftX"]),
+        
+        .target(
+            name: "SwiftUIX"),
     ]
 )
